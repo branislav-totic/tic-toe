@@ -2,12 +2,12 @@ import React from "react";
 import Square from "../Square";
 import { BordStyle, BorderRow } from "./Board.css";
 
-function Bord({ squares, onClick }) {
+function Bord({ squares, onClick, winnerCondition }) {
   function renderSquare(i) {
     return <Square value={squares[i]} onClick={() => onClick(i)} />;
   }
   return (
-    <BordStyle>
+    <BordStyle winnerCondition={winnerCondition}>
       <BorderRow>
         {renderSquare(0)}
         {renderSquare(1)}

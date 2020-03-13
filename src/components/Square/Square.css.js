@@ -2,21 +2,21 @@ import styled from "styled-components";
 
 export const SquareStyle = styled.button`
   float: left;
-  font-size: 50px;
+  font-size: 3.125rem;
   font-weight: bold;
-  margin: 5px;
+  margin: 0.3125rem;
   padding: 0;
   text-align: center;
-  width: 80px;
-  height: 80px;
-  line-height: 80px;
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
   text-decoration: none;
   color: #fff;
   background-color: #538fbe;
   border: 1px solid #2d6898;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 0.3125rem;
+  -moz-border-radius: 0.3125rem;
+  border-radius: 0.3125rem;
   background-image: linear-gradient(
     bottom,
     rgb(73, 132, 180) 0%,
@@ -49,12 +49,12 @@ export const SquareStyle = styled.button`
     color-stop(0, rgb(73, 132, 180)),
     color-stop(1, rgb(97, 155, 203))
   );
-  -webkit-box-shadow: 5px 4px 0px #2b638f, 7px 15px 15px rgb(0, 0, 0, 0.4),
-  inset 5px 4px 0px rgb(255, 255, 255, 0.4);
-  -moz-box-shadow: 5px 4px 0px #2b638f, 7px 15px 15px rgb(0, 0, 0, 0.4),
-    inset 5px 4px 0px rgb(255, 255, 255, 0.4);
-  box-shadow: 5px 4px 0px #2b638f, 7px 15px 15px rgb(0, 0, 0, 0.4),
-    inset 5px 4px 0px rgb(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0.3125rem 0.25rem 0 #2b638f, 0.4375rem 0.9375rem 0.9375rem rgb(0, 0, 0, 0.4),
+  inset 0.3125rem 0.25rem 0 rgb(255, 255, 255, 0.4);
+  -moz-box-shadow: 0.3125rem 0.25rem 0 #2b638f, 0.4375rem 0.9375rem 0.9375rem rgb(0, 0, 0, 0.4),
+    inset 0.3125rem 0.25rem 0 rgb(255, 255, 255, 0.4);
+  box-shadow: 0.3125rem 0.25rem 0 #2b638f, 0.4375rem 0.9375rem 0.9375rem rgb(0, 0, 0, 0.4),
+    inset 0.3125rem 0.25rem 0 rgb(255, 255, 255, 0.4);
 
   &:focus {
     outline: none;

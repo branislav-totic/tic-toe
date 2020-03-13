@@ -1,5 +1,16 @@
 import React, { useState } from "react";
-import { GameStyle, GameBord, GameInfo, Status, Moves, Move, MoveButton } from "./Game.css";
+import {
+  Difficulty,
+  DifficultyButton,
+  GameContainer,
+  GameStyle,
+  GameBord,
+  GameInfo,
+  Status,
+  Moves,
+  Move,
+  MoveButton
+} from "./Game.css";
 import Bord from "../Board";
 import { calculateWinner } from "../../helpers/calculate";
 
@@ -8,7 +19,10 @@ function Game() {
   const [stepNumber, setStepNumber] = useState(0);
   const [history, setHistory] = useState([{ squares: Array(9).fill(null) }]);
   const current = history[stepNumber];
-  const winner = calculateWinner(current.squares);
+  const { winner } = calculateWinner(current.squares);
+  const { winnerCondition } = calculateWinner(current.squares);
+  const [selected, setSelected] = useState(`medium`);
+  console.log(winnerCondition)
 
   function renderStatus() {
     return (
@@ -39,12 +53,16 @@ function Game() {
     setStepNumber(move);
     setXIsNext(move % 2 === 0);
   }
-  
+
+  const handleDifficulty = (difficulty) => () =>{
+    setSelected(difficulty)
+  }
+
   function handleClick(i) {
     const newHistory = history.slice(0, stepNumber + 1);
     const current = newHistory[newHistory.length - 1];
     const squares = current.squares.slice();
-    const winner = calculateWinner(squares);
+    const { winner } = calculateWinner(squares);
     if (winner || squares[i]) {
       return;
     }
@@ -56,15 +74,37 @@ function Game() {
   }
 
   return (
-    <GameStyle>
-      <GameBord>
-        <Bord onClick={handleClick} squares={current.squares} />
-      </GameBord>
-      <GameInfo>
-        {renderStatus()}
-        {renderMoves()}
-      </GameInfo>
-    </GameStyle>
+    <GameContainer>
+      <Difficulty>
+        <DifficultyButton
+          selected={selected === `beginner`}
+          onClick={handleDifficulty(`beginner`)}
+        >
+          Beginner
+        </DifficultyButton>
+        <DifficultyButton
+          selected={selected ===`medium`}
+          onClick={handleDifficulty(`medium`)}
+        >
+          Medium
+        </DifficultyButton>
+        <DifficultyButton
+          selected={selected === `hard`}
+          onClick={handleDifficulty(`hard`)}
+        >
+          Hard
+        </DifficultyButton>
+      </Difficulty>
+      <GameStyle>
+        <GameBord>
+          <Bord onClick={handleClick} squares={current.squares} winnerCondition={winnerCondition}/>
+        </GameBord>
+        <GameInfo>
+          {renderStatus()}
+          {renderMoves()}
+        </GameInfo>
+      </GameStyle>
+    </GameContainer>
   );
 }
 
