@@ -1,19 +1,16 @@
 import styled from "styled-components";
 
 export const SquareStyle = styled.button`
-  float: left;
-  font-size: 3.125rem;
-  font-weight: bold;
-  margin: 0.3125rem;
-  padding: 0;
-  text-align: center;
   width: 5rem;
   height: 5rem;
+  border: 1px solid #2d6898;
+  background-color: #538fbe;
+  color: #fff;
+  font-size: 3.125rem;
+  font-weight: bold;
+  text-align: center;
   line-height: 5rem;
   text-decoration: none;
-  color: #fff;
-  background-color: #538fbe;
-  border: 1px solid #2d6898;
   -webkit-border-radius: 0.3125rem;
   -moz-border-radius: 0.3125rem;
   border-radius: 0.3125rem;

@@ -8,10 +8,8 @@ export const GameContainer = styled.div`
 export const Difficulty = styled.div`
   display: flex;
   flex-direction: row;
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  justify-content: center;
+  margin-top: 15vh;
 `;
 
 export const DifficultyButton = styled.div`
@@ -42,12 +40,15 @@ export const DifficultyButton = styled.div`
 
 export const GameStyle = styled.div`
   position: absolute;
-  top: 50%;
+  top: 25vh;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   display: flex;
   flex-direction: row;
   margin: 0 auto;
+  @media only screen and (max-width: 586px) {
+    flex-direction: column;
+  }
 `;
 
 export const GameBord = styled.div``;
@@ -55,6 +56,9 @@ export const GameBord = styled.div``;
 export const GameInfo = styled.div`
   margin-left: 1.25rem;
   text-align: center;
+  @media only screen and (max-width: 586px) {
+    margin: 1.25rem 0;
+  }
 `;
 
 export const Status = styled.div`

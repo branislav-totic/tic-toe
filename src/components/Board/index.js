@@ -1,6 +1,6 @@
 import React from "react";
 import Square from "../Square";
-import { BordStyle, BorderRow } from "./Board.css";
+import { BordStyle } from "./Board.css";
 
 function Bord({ squares, onClick, winnerCondition }) {
   function renderSquare(i) {
@@ -8,21 +8,15 @@ function Bord({ squares, onClick, winnerCondition }) {
   }
   return (
     <BordStyle winnerCondition={winnerCondition}>
-      <BorderRow>
         {renderSquare(0)}
         {renderSquare(1)}
         {renderSquare(2)}
-      </BorderRow>
-      <BorderRow>
         {renderSquare(3)}
         {renderSquare(4)}
         {renderSquare(5)}
-      </BorderRow>
-      <BorderRow>
         {renderSquare(6)}
         {renderSquare(7)}
         {renderSquare(8)}
-      </BorderRow>
     </BordStyle>
   );
 }

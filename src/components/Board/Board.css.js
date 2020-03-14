@@ -7,6 +7,12 @@ const width = keyframes`
 
 export const BordStyle = styled.div`
   position: relative;
+  display: grid;
+  grid-template-columns: 5rem 5rem 5rem;
+  grid-template-rows: 5rem 5rem 5rem; 
+  grid-column-gap: 0.685rem;
+  grid-row-gap: 0.685rem;
+
   ${({ winnerCondition }) =>
     winnerCondition &&
     css`
@@ -87,12 +93,4 @@ export const BordStyle = styled.div`
             `}
         }
       `}
-`;
-
-export const BorderRow = styled.div`
-  &::after {
-    clear: both;
-    content: "";
-    display: table;
-  }
 `;

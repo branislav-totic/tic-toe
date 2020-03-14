@@ -19,8 +19,7 @@ function Game() {
   const [stepNumber, setStepNumber] = useState(0);
   const [history, setHistory] = useState([{ squares: Array(9).fill(null) }]);
   const current = history[stepNumber];
-  const { winner } = calculateWinner(current.squares);
-  const { winnerCondition } = calculateWinner(current.squares);
+  const { winner, winnerCondition } = calculateWinner(current.squares);
   const [selected, setSelected] = useState(`medium`);
   console.log(winnerCondition)
 
